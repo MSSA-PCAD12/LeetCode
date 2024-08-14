@@ -73,5 +73,15 @@ namespace LeetCode.Tests
             string actual = l.LongestCommonPrefix2(strs);
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        public void LongestCommonPrefix2Test4()
+        {
+            string[] strs = ["flower"];
+            string expected = "flower";
+            LongestPrefix l = new LongestPrefix();
+
+            string actual = l.LongestCommonPrefix2(strs);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
