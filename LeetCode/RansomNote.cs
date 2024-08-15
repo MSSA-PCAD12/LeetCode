@@ -13,11 +13,11 @@ namespace LeetCode
             Dictionary<char, int> map = new Dictionary<char, int>();
             foreach (var c in magazine)
             {
-                if (!map.ContainsKey(c)) { map.Add(c, 1); }
+                if (map.ContainsKey(c)) { map[c]++; }
                 else
-                    map[c]++;
+                    map.Add(c, 1);
             }
-            //Dictionary<char, int> map = new Dictionary<char, int>(
+            //Dictionary<char, int> map2 = new Dictionary<char, int>(
             //    magazine.GroupBy(letter => letter).Select(g => new KeyValuePair<char, int>(g.Key, g.Count())));
 
             foreach (char c in ransomNote) {
