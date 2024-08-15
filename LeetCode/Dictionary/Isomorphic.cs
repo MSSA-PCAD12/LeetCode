@@ -12,8 +12,8 @@ namespace LeetCode
         public bool IsIsomorphic(string s, string t)
         {
             if (s.Length!=t.Length) return false;
-            Dictionary<char,char> sToT = new();
-            Dictionary<char, char> tToS = new();
+            SortedList<char,char> sToT = new();
+            SortedList<char, char> tToS = new();
 
             for (int i = 0; i < s.Length; i++)
             {
