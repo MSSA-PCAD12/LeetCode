@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace LeetCode
 {
-	//https://leetcode.com/problems/isomorphic-strings/
-	public class Anagram
+    //https://leetcode.com/problems/valid-anagram/
+    public class Anagram
 	{
 		public bool IsAnagram(string s, string t) {
 			Dictionary<char,int> map = new Dictionary<char,int>();

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LeetCode
-{
+{//https://leetcode.com/problems/word-pattern
     public class WordPatternLeet
     {
         public bool WordPattern(string pattern, string s)

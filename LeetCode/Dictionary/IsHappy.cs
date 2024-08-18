@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetCode
 {
+    //https://leetcode.com/problems/happy-number/
     public class IsHappyLeet
     {
         public bool IsHappy(int n)
@@ -18,13 +19,13 @@ namespace LeetCode
                 result = 0;
                 foreach (char item in input)
                 {
-                    result += (int)Math.Pow(Convert.ToInt32(item.ToString()),2);
+                    result += (int)Math.Pow(Convert.ToInt32(item.ToString()), 2);
                 }
                 input = result.ToString();
                 if (history.TryGetValue(result, out _)) return false;
                 else
-                    history.Add(result) ;
-                
+                    history.Add(result);
+
             }
             return true;
         }
