@@ -27,5 +27,21 @@ namespace LeetCode.Tests
             bool actual = new Anagram().IsAnagram(s, t);
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        public void AnagramTest3()
+        {
+            string s = "戰爭持續拖長", t = "持續戰爭長拖";
+            bool expected = true;
+            bool actual = new Anagram().IsAnagram(s, t);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void AnagramTest4()
+        {
+            string s = "戰爭持續拖長", t = "持續戰爭長拖長長";
+            bool expected = false;
+            bool actual = new Anagram().IsAnagram(s, t);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
