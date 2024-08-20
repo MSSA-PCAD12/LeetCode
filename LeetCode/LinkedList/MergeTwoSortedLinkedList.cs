@@ -8,30 +8,32 @@ namespace LeetCode
 {//https://leetcode.com/problems/merge-two-sorted-lists/
     public class MergeTwoListsLeet
     {
-       public ListNode MergeTwoLists(ListNode list1, ListNode list2) {
-        if (list1==null) return list2;
-        if (list2==null) return list1;
-
-        ListNode newHead =new ListNode(-1);
-        ListNode node= new ListNode(-1);
-        newHead.next = node;
-  
-        while (list1.next!=null &&list2.next!=null)//there is still nodes left
+        public ListNode MergeTwoLists(ListNode list1, ListNode list2)
         {
-            if (list1.next==null){node = list1; node.next = list2; break;}
-            if (list2.next==null){node = list2; node.next = list1; break;}
-            if (list1.val < list2.val)
+            if (list1 == null) return list2;
+            if (list2 == null) return list1;
+
+            ListNode newHead = new ListNode(-1);
+            ListNode node = new ListNode(-1);
+            newHead = node;
+
+            while (list1 != null && list2 != null)//there is still nodes left
             {
-                node = list1;
-                list1 = list1.next;
-            }else
-            {
-                node = list2;
-                list2 = list2.next;
+                if (list1.val < list2.val)
+                {
+                    node.next = list1;
+                    list1 = list1.next!;
+                }
+                else
+                {
+                    node.next = list2;
+                    list2 = list2.next!;
+                }
+                node = node.next;
             }
-           node=node.next;
+            if (list1 == null) { node.next = list2; }
+            if (list2 == null) { node.next = list1; }
+            return newHead.next!;
         }
-        return newHead.next;
-    }
     }
 }
