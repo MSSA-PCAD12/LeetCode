@@ -10,7 +10,6 @@ namespace LeetCode.BinaryTreeGeneral
     {
         public bool IsSymmetric(TreeNode root) {
             if (root == null) return false;
-
             return check(root.left,root.right);
         }
         bool check(TreeNode left, TreeNode right)
@@ -24,17 +23,24 @@ namespace LeetCode.BinaryTreeGeneral
         public bool IsSymmetric2(TreeNode root)
         {
             if (root == null) return false;
-            int level = 0;
-            bool isSymmetrical = false;
-            Stack<TreeNode> stack = new Stack<TreeNode>();
-            stack.Push(root);
+      
+            bool isSymmetrical = true;
+
+            var stack = new Stack<(TreeNode,TreeNode)>();
+            stack.Push((root.left,root.right));
             while (stack.Count != 0)
             {
                 var node = stack.Pop();
-                if (node == null) continue;
+                if (node.Item1 == null ^ node.Item2 == null) { isSymmetrical = false; break; }
+                if (node.Item1 != null && node.Item2 != null)
+                {
+                    if (node.Item1!.val != node.Item2!.val) { isSymmetrical = false; break; }
+                    stack.Push((node.Item1.left, node.Item2.right));
+                    stack.Push((node.Item1.right, node.Item2.left));
+                }
             }
 
-            return false;
+            return isSymmetrical;
         }
        
     }
