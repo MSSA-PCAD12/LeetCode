@@ -7,8 +7,21 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LeetCode
 {
-    internal class codility
+    public class codility
     {
+        public string getNote(string L, int[] B)
+        {
+            int starting = 0;
+            var result = new StringBuilder(L[starting].ToString());
+            int nextChild = B[starting];
+
+            while (nextChild != 0)
+            {
+                result.Append(L[nextChild]);
+                nextChild = B[nextChild];
+            }
+            return result.ToString();
+        }
     }
 }
 
