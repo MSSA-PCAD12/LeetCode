@@ -48,8 +48,11 @@ namespace LeetCode
             if (input.Length == 1) { return input; }
 
             int mid = input.Length / 2; //divide input to half
+            //the following recursion is the divide part
             var left = DoMergeSort(input[..mid]); //send left half
             var right = DoMergeSort(input[mid..]);//send right half
+
+            //the following section runs on return portion of the merge sort
             T[] result = new T[(left.Length + right.Length)]; //initialize result array
             int idxLeft = 0, idxRight = 0, idxResult = 0; //while loop index
             while (idxLeft < left.Length && idxRight < right.Length) //do while both array has elements
