@@ -11,7 +11,8 @@ namespace LeetCode
 
         public int[] DoMergeSort(int[] input)
         {
-            if (input.Length == 1) { return input; }
+            if (input.Length == 1) {
+                return input; }
 
             int mid = input.Length / 2; //divide input to half
             var left= DoMergeSort(input[..mid]); //send left half
