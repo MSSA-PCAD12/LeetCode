@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LeetCode
-{
+{//https://leetcode.com/problems/single-number/
     public class SingleNumberLeet
     {
         public int SingleNumber(int[] nums)

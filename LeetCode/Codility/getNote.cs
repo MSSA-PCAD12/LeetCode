@@ -7,7 +7,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LeetCode
 {
-    public class codility
+    public class CodilitySample1
     {
         public string getNote(string L, int[] B)
         {

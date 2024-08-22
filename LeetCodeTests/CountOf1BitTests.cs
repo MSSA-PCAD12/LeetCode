@@ -9,27 +9,30 @@ using System.Threading.Tasks;
 namespace LeetCode.Tests
 {
     [TestClass()]
-    public class CodilityTest
+    public class CountOf1BitTests
     {
         [TestMethod()]
-        public void CodilityTest1()
+        public void HammingWeightTest()
         {
-            var expected = "centipede";
-            var actual = new CodilitySample1().getNote("cdeenetpi", [5, 2, 0, 1, 6, 4, 8, 3, 7]);
+            int n = 11;
+            int expected = 3;
+            var actual = new CountOf1Bit().HammingWeight(n);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
-        public void CodilityTest2()
+        public void HammingWeightTest2()
         {
-            var expected = "bat";
-            var actual = new CodilitySample1().getNote("bytdag", [4, 3, 0, 1, 2, 5]);
+            int n = 128;
+            int expected = 1;
+            var actual = new CountOf1Bit().HammingWeight(n);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
-        public void CodilityTest3()
+        public void HammingWeightTest3()
         {
-            var expected = "code";
-            var actual = new CodilitySample1().getNote("cdeo", [3, 2, 0, 1]);
+            int n = 2147483645;
+            int expected = 30;
+            var actual = new CountOf1Bit().HammingWeight(n);
             Assert.AreEqual(expected, actual);
         }
     }
