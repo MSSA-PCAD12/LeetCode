@@ -47,7 +47,7 @@ namespace LeetCode
             string paddedB = "";
             if (b.Length % 8 != 0)
             {
-                paddedB = string.Concat(new String('0', b.Length % 8), b);
+                paddedB = string.Concat(new String('0', 8 - b.Length % 8), b);
             }
             else { paddedB = b; }
             byte[] bBytes = new byte[(paddedB.Length / 8)];
@@ -55,8 +55,8 @@ namespace LeetCode
             {
                 bBytes[i] = Byte.Parse((paddedB[(i * 8)..((i + 1) * 8)]).ToString(), NumberStyles.BinaryNumber);
             }
-            var bigA = new BigInteger(aBytes);
-            var bigB = new BigInteger(bBytes);
+            var bigA = new BigInteger(aBytes,true);
+            var bigB = new BigInteger(bBytes,true);
             var bigResult = bigA + bigB;
 
             StringBuilder sb = new StringBuilder();

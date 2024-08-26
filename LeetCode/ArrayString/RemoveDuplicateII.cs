@@ -11,6 +11,7 @@ namespace LeetCode
     {//https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
         public int RemoveDuplicates(int[] nums)
         {
+            if (nums.Length < 3) return nums.Length;
             int count = 1;
             int toFillIn = 1;
             for (int i = 1; i < nums.Length; i++) { // go through each item
