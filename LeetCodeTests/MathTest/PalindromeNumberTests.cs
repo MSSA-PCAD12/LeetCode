@@ -43,5 +43,13 @@ namespace LeetCode.Tests
             bool actual = new PalindromeNumber().IsPalindrome(input);
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        public void IsPalindromeTest5()
+        {
+            var input = 135797531;
+            bool expected = true;
+            bool actual = new PalindromeNumber().IsPalindrome(input);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
