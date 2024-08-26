@@ -35,8 +35,9 @@ namespace LeetCode
             string paddedA = "";
             if (a.Length % 8 != 0)
             {
-                paddedA = string.Concat(new String('0',8- a.Length % 8), a);
+                paddedA = string.Concat(new String('0', 8 - a.Length % 8), a);
             }
+            else { paddedA = a; }
             byte[] aBytes = new byte[(paddedA.Length / 8)];
             for (int i = 0; i < aBytes.Length; i++)
             {
@@ -46,8 +47,9 @@ namespace LeetCode
             string paddedB = "";
             if (b.Length % 8 != 0)
             {
-                paddedB = string.Concat(new String('0', 8-b.Length % 8), b);
+                paddedB = string.Concat(new String('0', b.Length % 8), b);
             }
+            else { paddedB = b; }
             byte[] bBytes = new byte[(paddedB.Length / 8)];
             for (int i = 0; i < bBytes.Length; i++)
             {

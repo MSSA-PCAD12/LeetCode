@@ -43,5 +43,13 @@ namespace LeetCode.Tests
             string actual = new AddBinaryLeet().AddBinary2(a, b);
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        public void AddBinaryTest5()
+        {
+            string a = "11", b = "11010010";
+            string expected = "11010101";
+            string actual = new AddBinaryLeet().AddBinary2(a, b);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
