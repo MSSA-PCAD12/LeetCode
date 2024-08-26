@@ -8,22 +8,26 @@ using System.Threading.Tasks;
 namespace LeetCode
 {//https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii
     public class RemoveDuplicateII
-    {
+    {//https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
         public int RemoveDuplicates(int[] nums)
         {
-            int counter = 0;
-            bool hasAppearedTwoTimes=false;
-
-            for (int i = 1; i < nums.Length; i++) { 
-            bool isRepeat = (nums[counter] == nums[i]);
-                if (!isRepeat || !hasAppearedTwoTimes)
+            int count = 1;
+            int toFillIn = 1;
+            for (int i = 1; i < nums.Length; i++) { // go through each item
+                if (nums[i - 1] == nums[i])
                 {
-                    nums[++counter] = nums[i];
+                    count++;
                 }
-                hasAppearedTwoTimes = isRepeat;
-            }
+                else
+                { 
+                    count = 1;
+                }
+                if (count <= 2) { //  this i should be replace by next value.
+                    nums[toFillIn++] = nums[i];
+                }
 
-            return counter+1;
+            }
+            return toFillIn;
         }
     }
 }

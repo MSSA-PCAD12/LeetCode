@@ -14,7 +14,7 @@ namespace LeetCode.Tests
         [TestMethod()]
         public void RemoveDuplicatesTest()
         {
-            int[] nums = nums = [1, 1, 1, 2, 2, 3];
+            int[] nums = [1, 1, 1, 2, 2, 3];
             int expected = 5;
             int[] expectedNums = [1, 1, 2, 2, 3];
             RemoveDuplicateII tester = new();
