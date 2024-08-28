@@ -27,5 +27,14 @@ namespace LeetCode.ArrayString.Tests
             int actual = new HIndexLeet().HIndex(citations);
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        public void HIndex2Test()
+        {
+            int[] citations = [3, 0, 6, 1, 5];
+            int expected = 3;
+            int actual = new HIndexLeet().HIndex2(citations);
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
