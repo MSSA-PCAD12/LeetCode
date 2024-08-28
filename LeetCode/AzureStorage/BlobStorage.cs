@@ -11,7 +11,7 @@ namespace LeetCode.AzureStorage
     {
         BlobServiceClient client;
         private string _connectionString =
-            @"DefaultEndpointsProtocol=https;AccountName=vc0316;AccountKey=EtncGrpA7RkLfhOz5WuaA57bZ7jR4Gx/TgYfmGidUxfJL1qNdiTxnoca6GPK24Qi4NWUmFk5Mib2+AStC/IjOA==;EndpointSuffix=core.windows.net";
+            @"";
         public BlobStorage()
         {
          

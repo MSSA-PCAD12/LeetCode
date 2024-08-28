@@ -9,7 +9,7 @@ namespace LeetCode.AzureRedis
 {
     public class RedisSample
     {
-        ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("vc0827.redis.cache.windows.net:6380,password=tKD6g9h9I8SMCJw6zWhUZCSOCfqKQc4BsAzCaNNMLtg=,ssl=True,abortConnect=False");
+        ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("");
         public void AddToSet(string key,string value) {
             IDatabase db = redis.GetDatabase();
             db.SetAdd(new RedisKey(key), new RedisValue(value));
