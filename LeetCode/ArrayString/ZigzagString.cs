@@ -10,27 +10,31 @@ namespace LeetCode.ArrayString
     {
         public string Convert(string s, int numRows)
         {
-            if (s.Length <= numRows ||numRows==1) return s;
+            if (s.Length <= numRows ||numRows==1) return s;//tricky cases
+
             int charCount = s.Length;
+
             int numOfCharInGroup = 2 * numRows - 2;//how many character fits in each column group
             int groupCount = (int)Math.Ceiling((double)charCount / numOfCharInGroup);//how many groups are there to store the string
 
             int numCols = groupCount * (numRows - 1); //this is a safe boundary for grid column count
-            char[,] resultGrid = new char[numRows, numCols]; //initialize result grid
-            int row = 0; int col = 0; var charPointer=s.GetEnumerator();
+            char[,] resultGrid = new char[numRows, numCols]; //initialize result grid - this is a 2 dimensional array not a jagged array
+            int row = 0; int col = 0; var charPointer=s.GetEnumerator();//getting pointers ready
             
-            string result = string.Empty;
+            string result = string.Empty; //default result to empty string
+
             for (int i = 0; i < groupCount ; i++) //this loops over the number of group
             { 
-                for (int j = 0; j < numOfCharInGroup && charPointer.MoveNext(); j++) // this is based on the number of char in each group
+                for (int j = 0; j < numOfCharInGroup && charPointer.MoveNext(); j++) 
+                    // this is based on the number of char in each group
                 {
                     if (j < numRows) // if j < than number of Rows then we are going down vertically
                     {
-                        resultGrid[row, col] = charPointer.Current;
-                        if (j!= numRows-1) 
+                        resultGrid[row, col] = charPointer.Current;//stuff the current letter in to the grid
+                        if (j!= numRows-1) //we have not reached the bottom yet
                             row+=1;
                     }
-                    else// j has gone pass the numRows, now we are going diagnal
+                    else// j has gone pass the numRows, now we are going diagnal and back upward
                     {
                         row -= 1;
                         col += 1;
