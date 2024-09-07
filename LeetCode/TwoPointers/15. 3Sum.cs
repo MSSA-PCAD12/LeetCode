@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LeetCode.TwoPointers
-{
+{//https://leetcode.com/problems/3sum
     public class ThreeSumLeet
     {
-        public List<List<int>> ThreeSum(int[] nums)
+        public IList<IList<int>> ThreeSum(int[] nums)
         {
-            List<List<int>> result = new List<List<int>>();
+            IList<IList<int>> result = new List<IList<int>>();
             if (nums.Length <= 2) return result;
 
             Array.Sort(nums);

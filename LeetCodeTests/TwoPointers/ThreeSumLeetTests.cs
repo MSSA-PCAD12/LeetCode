@@ -16,10 +16,10 @@ namespace LeetCode.TwoPointers.Tests
         {
             int[] nums = [-1, 0, 1, 2, -1, -4];
             List<List<int>> expected = [[-1, -1, 2], [-1, 0, 1]];
-            List<List<int>> actual = new ThreeSumLeet().ThreeSum(nums);
+            List<IList<int>> actual = new ThreeSumLeet().ThreeSum(nums).ToList();
             for (int i = 0; i < expected.Count - 1; i++)
             {
-                CollectionAssert.AreEqual(actual[i],expected[i]);
+                CollectionAssert.AreEqual(actual[i].ToList(), expected[i].ToList());
             }
         }
         [TestMethod()]
@@ -27,21 +27,21 @@ namespace LeetCode.TwoPointers.Tests
         {
             int[] nums = [0, 1, 1];
             List<List<int>> expected = [];
-            List<List<int>> actual = new ThreeSumLeet().ThreeSum(nums);
+            List<IList<int>> actual = new ThreeSumLeet().ThreeSum(nums).ToList();
             for (int i = 0; i < expected.Count - 1; i++)
             {
-                CollectionAssert.AreEqual(actual[i], expected[i]);
+                CollectionAssert.AreEqual(actual[i].ToList(), expected[i].ToList());
             }
         }
         [TestMethod()]
         public void ThreeSumTest3()
         {
             int[] nums = [0, 0, 0];
-            List<List<int>> expected = [];
-            List<List<int>> actual = new ThreeSumLeet().ThreeSum(nums);
+            List<IList<int>> expected = [];
+            List<IList<int>> actual = new ThreeSumLeet().ThreeSum(nums).ToList();
             for (int i = 0; i < expected.Count - 1; i++)
             {
-                CollectionAssert.AreEqual(actual[i], expected[i]);
+                CollectionAssert.AreEqual(actual[i].ToList(), expected[i].ToList());
             }
         }
     }
