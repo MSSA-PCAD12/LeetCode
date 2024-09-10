@@ -14,7 +14,7 @@ namespace LeetCode.SlidingWindow
             int start = 0;
             int end = 0;
             int w_sum = nums[0];
-            int maxLen = int.MaxValue;
+            int minLength = int.MaxValue;
             while (end < nums.Length)
             {
                 if (w_sum < target)
@@ -25,12 +25,12 @@ namespace LeetCode.SlidingWindow
                 }
                 else
                 {
-                    maxLen = Math.Min(maxLen, end - start + 1);
+                    minLength = Math.Min(minLength, end - start + 1);
                     w_sum -= nums[start];
                     start++;
                 }
             }
-            return maxLen == int.MaxValue ? 0 : maxLen;
+            return minLength == int.MaxValue ? 0 : minLength;
         }
     }
 

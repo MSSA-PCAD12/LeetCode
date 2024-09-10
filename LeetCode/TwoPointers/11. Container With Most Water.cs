@@ -32,5 +32,24 @@ namespace LeetCode.TwoPointers
             }
             return maxArea;
         }
+        public int MaxArea2(int[] height) //cartesian product wont pass the Time Limit Exceeded test cases :)
+        {
+            var heightWithIndex =height.Select((x, idx) => new { index = idx, height = x });
+            var q = from x in heightWithIndex 
+                    join y in heightWithIndex on 1 equals 1
+                    select new { volume = (x.index - y.index) * Math.Min(x.height, y.height) };
+
+            return q.Max(r=>r.volume);
+        }
+        public int MaxArea3(int[] height) //cartesian product wont pass the Time Limit Exceeded test cases :)
+        {
+            var heightWithIndex = height.Select((x, idx) => new { index = idx, height = x });
+            var q = from x in heightWithIndex
+                    from y in heightWithIndex
+                    where (x.index != y.index)
+                    select new { volume = (x.index - y.index) * Math.Min(x.height, y.height) };
+
+            return q.Max(r => r.volume);
+        }
     }
 }

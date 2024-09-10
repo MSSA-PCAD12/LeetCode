@@ -44,7 +44,7 @@ namespace LeetCode.SlidingWindow.Tests
             // Arrange
             var solution = new MinSizeSubArraySum();
             int target = 4;
-            int[] nums = { 4 };
+            int[] nums = { 1,4,4 };
 
             // Act
             int result = solution.MinSubArrayLen(target, nums);
