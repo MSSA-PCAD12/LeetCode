@@ -26,14 +26,16 @@ namespace LeetCode.Intervals
             return Merge(mergedInterval);
 
         }
-        public int[][] Insert2(int[][] intervals, int[] newInterval) {
-            LinkedList<int[]> llist = new LinkedList<int[]>(intervals);
+        public int[][] Insert2(int[][] intervals, int[] newInterval){
+           LinkedList<int[]> llist = new LinkedList<int[]>(intervals);
             var node = llist.First;
+            bool newIntervalMerged = false;
             while (node != null) {
                 if (newInterval[0] <= node.Value[1])
                 {
+                    //node.Value[0] = Math.Min(newInterval[0], node.Value[0]);
                     node.Value[1] = Math.Max(newInterval[1], node.Value[1]);
-                   
+                    newIntervalMerged = true;
                 }
                 if (node.Next != null)
                     {
@@ -48,6 +50,7 @@ namespace LeetCode.Intervals
                     break;
                 }
             }
+            if (!newIntervalMerged) { llist.AddLast(newInterval); }
             return llist.ToArray();
         }
         public int[][] Merge(int[][] intervals)

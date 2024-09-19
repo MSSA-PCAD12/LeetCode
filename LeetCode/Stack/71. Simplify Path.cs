@@ -44,7 +44,7 @@ namespace LeetCode.Stack
             while (stack.Count > 0)
             {
                 result = $"{stack.Pop()}/{result}" ;
-                stack.
+                
             }
             return "/"+ result[0..^1];
         }

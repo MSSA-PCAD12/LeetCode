@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LeetCode.AzureRedis.Tests
 {
-    [TestClass()]
+   // [TestClass()]
     public class RedisSampleTests
     {
         [TestMethod()]

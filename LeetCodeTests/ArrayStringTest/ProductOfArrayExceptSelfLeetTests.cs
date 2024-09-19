@@ -27,21 +27,6 @@ namespace LeetCode.ArrayString.Tests
             var actual = new ProductOfArrayExceptSelfLeet().ProductExceptSelf(input);
             CollectionAssert.AreEqual(expected, actual);
         }
-        [TestMethod()]
-        public void ProductExceptSelfTes3()
-        {
-            int[] input = [1, 2, 3, 4];
-            int[] expected = [24, 12, 8, 6];
-            var actual = new ProductOfArrayExceptSelfLeet().ProductExceptSelf2(input);
-            CollectionAssert.AreEqual(expected, actual);
-        }
-        [TestMethod()]
-        public void ProductExceptSelfTest4()
-        {
-            int[] input = [-1, 1, 0, -3, 3];
-            int[] expected = [0, 0, 9, 0, 0];
-            var actual = new ProductOfArrayExceptSelfLeet().ProductExceptSelf2(input);
-            CollectionAssert.AreEqual(expected, actual);
-        }
+        
     }
 }

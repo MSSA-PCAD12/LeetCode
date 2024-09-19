@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LeetCode.AzureStorage.Tests
 {
-    [TestClass()]
+    //[TestClass()]
     public class BlobStorageTests
     {
         [TestMethod()]

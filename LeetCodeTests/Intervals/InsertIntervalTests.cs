@@ -61,5 +61,17 @@ namespace LeetCode.Intervals.Tests
                 CollectionAssert.AreEqual(expected[i], actual[i]);
             }
         }
+        [TestMethod()]
+        public void InsertTest5()
+        {
+            int[][] input = [[1, 5]];
+            int[] newInterval = [6, 8];
+            int[][] expected = [[1, 5], [6, 8]];
+            var actual = new InsertInterval().Insert2(input, newInterval);
+            for (int i = 0; i < expected.Length; i++)
+            {
+                CollectionAssert.AreEqual(expected[i], actual[i]);
+            }
+        }
     }
 }
